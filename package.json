@@ -1,0 +1,54 @@
+{
+  "name": "@oasislabs/ai-rose-extensions",
+  "version": "0.1.0-alpha.1",
+  "license": "MIT",
+  "author": "Oasis Labs <ai-rose@oasislabs.com>",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore . --ext .ts && prettier --plugin-search-dir=. --check test/**.ts src/**.ts contracts/**.sol && solhint contracts/**.sol",
+    "fmt": "eslint --fix --ignore-path .gitignore --ext .ts && prettier --plugin-search-dir=. --write test/**.ts src/**.ts contracts/**.sol && solhint --fix contracts/**.sol",
+    "build": "hardhat compile && tsc -b",
+    "watch": "hardhat watch",
+    "test": "hardhat test",
+    "prepublishOnly": "yarn build"
+  },
+  "files": [
+    "abis",
+    "contracts",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.2",
+    "ethers": "^5.5.3"
+  },
+  "devDependencies": {
+    "@defi-wonderland/smock": "^2.0.7",
+    "@nomiclabs/hardhat-ethers": "^2.0.4",
+    "@nomiclabs/hardhat-waffle": "^2.0.2",
+    "@openzeppelin/contracts": "^4.4.2",
+    "@typechain/ethers-v5": "^9.0.0",
+    "@typechain/hardhat": "^4.0.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^16.11.14",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "canonicalize": "^1.0.8",
+    "chai": "^4.3.4",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "ethereum-waffle": "^3.4.0",
+    "hardhat": "^2.8.3",
+    "hardhat-watcher": "^2.1.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.6",
+    "solidity-coverage": "^0.7.18",
+    "ts-node": "^10.4.0",
+    "typechain": "^7.0.0",
+    "typescript": "^4.5.4"
+  }
+}
